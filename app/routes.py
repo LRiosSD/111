@@ -1,4 +1,3 @@
-cdc
 from flask import Flask
 
 
@@ -16,11 +15,11 @@ def about_me():
 
     return me
 
-    @app.route("/greet/<name>/")
-    def greet_user(name):
-        return "<h1>Hello, %s</h1>" % (fname, lname)
+@app.route("/greet/<fname>/<lname>/")
+def greet_user(fname, lname):
+    return "<h1>Hello, %s %s</h1>" % (fname, lname)
 
 
 @app.route("/square/<int:num>/")
 def square_num(num):
-    return "<h1>%s squared is: %s</h1>" %s (num, num*num)
+    return "<h1>%s squared is: %s</h1>" % (num, num*num)
